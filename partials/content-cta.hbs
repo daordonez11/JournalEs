@@ -4,21 +4,22 @@
 
 <section class="gh-cta">
     {{#has visibility="paid"}}
-        <h4 class="gh-cta-title">This post is for paying subscribers only</h4>
+    <h4 class="gh-cta-title">Este artículo es solo para suscriptores pagos</h4>
     {{/has}}
     {{#has visibility="members"}}
-        <h4 class="gh-cta-title">This post is for subscribers only</h4>
+    <h4 class="gh-cta-title">Este artículo es solo para suscriptores</h4>
     {{/has}}
     {{#has visibility="filter"}}
-        <h4 class="gh-cta-title">This post is for subscribers on the {{tiers}} only</h4>
+    <h4 class="gh-cta-title">Este artículo es solo para suscriptores: {{tiers}} </h4>
     {{/has}}
 
     <div class="gh-cta-actions">
         {{#if @member}}
-            <button class="gh-btn gh-primary-btn" href="#/portal/account/plans" data-portal="account/plans">Upgrade now</button>
+        <button class="gh-btn gh-primary-btn" href="#/portal/account/plans" data-portal="account/plans">Subir
+            plan</button>
         {{else}}
-            <button class="gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Subscribe now</button>
-            <span class="gh-cta-link" href="#/portal/signin" data-portal="signin">Already have an account? Sign in.</span>
+        <button class="gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Suscribirse</button>
+        <span class="gh-cta-link" href="#/portal/signin" data-portal="signin">¿Ya tienes cuenta? Ingresar.</span>
         {{/if}}
     </div>
 </section>
