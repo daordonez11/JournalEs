@@ -8,7 +8,7 @@
                     <a class="gh-card-link" href="{{url}}">
                         <header class="gh-card-header">
                             <div class="gh-article-meta">
-                                <span class="gh-card-date">Latest — <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></span>
+                                <span class="gh-card-date">Lo último — <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></span>
                             </div>
                             <h2 class="gh-article-title gh-card-title">{{title}}</h2>
                         </header>
@@ -31,7 +31,7 @@
 
         <div class="gh-wrapper">
             <section class="gh-section">
-                <h2 class="gh-section-title">More issues</h2>
+                <h2 class="gh-section-title">Más artículos</h2>
 
                 <div class="gh-feed">
                     {{^is "paged"}}
@@ -46,15 +46,15 @@
                 </div>
 
                 {{#match posts.length "=" 1}}
-                    Additional issues will be published soon.
+                    Pronto nuevas publicaciones.
                 {{/match}}
 
-                <button class="gh-loadmore gh-btn">Load more issues</button>
+                <button class="gh-loadmore gh-btn">Cargar más artículos</button>
             </section>
 
             <aside class="gh-sidebar">
                 <section class="gh-section">
-                    <h2 class="gh-section-title">About</h2>
+                    <h2 class="gh-section-title">Sobre Nosotros</h2>
 
                     <div class="gh-about">
                         {{#if @site.icon}}
@@ -74,19 +74,19 @@
                         {{^if @member.paid}}
                             <div class="gh-signup">
                                 {{^if @member}}
-                                    <p class="gh-signup-description">Sign up now to get access to the library of members-only issues.</p>
+                                    <p class="gh-signup-description">Registrate para acceder al contenido solo para suscriptores.</p>
 
                                     <a class="gh-subscribe-input" href="#/portal/signup" data-portal="signup">
                                         <div class="gh-subscribe-input-text">
                                             {{> icons/email}}
-                                            jamie@example.com
+                                            juan@ejemplo.com
                                         </div>
-                                        <div class="gh-subscribe-input-btn">Subscribe</div>
+                                        <div class="gh-subscribe-input-btn">Suscribirse</div>
                                     </a>
                                 {{else}}
                                     {{#if @setting.paid_members_enabled}}
-                                        <p class="gh-signup-description">Upgrade to a paid account to get full access.</p>
-                                        <a class="gh-signup-btn gh-btn gh-primary-btn" href="#/portal/account/plans" data-portal="account/plans">Upgrade now</a>
+                                        <p class="gh-signup-description">Súbete al plan pago para tener acceso completo a píldoras de conocimiento y resumenes</p>
+                                        <a class="gh-signup-btn gh-btn gh-primary-btn" href="#/portal/account/plans" data-portal="account/plans">Cambiar plan</a>
                                     {{/if}}
                                 {{/if}}
                             </div>
@@ -97,7 +97,7 @@
                 {{#get "posts" filter="featured:true" limit="all" as |featured|}}
                     {{#if featured}}
                         <section class="gh-section">
-                            <h3 class="gh-section-title">Featured</h3>
+                            <h3 class="gh-section-title">Más leidos</h3>
 
                             <div class="gh-featured gh-feed">
                                 {{#foreach featured}}
@@ -110,7 +110,7 @@
 
                 {{#get "tags" include="count.posts" limit="all" as |topic|}}
                     <section class="gh-section">
-                        <h3 class="gh-section-title">Topics</h3>
+                        <h3 class="gh-section-title">Categorías</h3>
 
                         <div class="gh-topic">
                             {{#foreach topic}}
@@ -127,11 +127,11 @@
 
                 {{#if @site.recommendations_enabled}}
                     <section class="gh-section">
-                        <h3 class="gh-section-title">Recommendations</h3>
+                        <h3 class="gh-section-title">Recomendaciones</h3>
 
                         <div class="gh-recommendations">
                             {{recommendations}}
-                            <button data-portal="recommendations">See all {{> "icons/arrow-right"}}</button>
+                            <button data-portal="recommendations">Ver todas {{> "icons/arrow-right"}}</button>
                         </div>
                     </section>
                 {{/if}}
